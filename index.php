@@ -7,26 +7,8 @@
 <body class="body">
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
-    <header class="header">
-        <nav class="MonNom">
-            De Franceschi Mohamed
-        </nav>
-        <nav class="About" onclick="scrollToMiddle('about-section')">
-            About
-        </nav>
-        <nav class="Experience" onclick="scrollToMiddle('experience-section')">
-            Experience 
-        </nav>
-        <nav class="project">
-            Project
-        </nav>
-        <nav class="Contact">
-            <a href="contact.php">Contact</a>
-        </nav>
-        <div class="blackthem">
-            <img class="Moon" id="Moon" src="img/darktem.png" alt="them" />
-        </div>
-    </header>
+    
+    <?php include 'templates/header.php';?>
 
     <section class="pdpPage">
         <div class="pp">
@@ -94,17 +76,7 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footerTop">
-            <p class="footerTxt0">© copyright mdefranceschi</p>
-        </div>
-        <div class="footerBottom">
-            <p class="footerTxt">home page</p>
-            <p class="footerTxt">contact me</p>
-            <p class="footerTxt">my project</p>
-            <p class="footerTxt">join my discord server</p>
-        </div>
-    </footer>
+    <?php include 'templates/footer.php';?>
 
     
 </body>

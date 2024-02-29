@@ -7,26 +7,9 @@
 <body class="body">
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
-    <header class="header">
-        <nav class="MonNom">
-            <a href="index.php">De Franceschi Mohamed </a>
-        </nav>
-        <nav class="About" onclick="scrollToMiddle('about-section')">
-            About 
-        </nav>
-        <nav class="Experience" onclick="scrollToMiddle('experience-section')">
-            Experience 
-        </nav>
-        <nav class="project">
-            Project 
-        </nav>
-        <nav class="Contact">
-            <a href="contact.php">Contact</a>
-        </nav>
-        <div class="blackthem">
-            <img class="Moon" id="Moon" src="img/darktem.png" alt="them" />
-        </div>
-    </header> 
+    
+
+    <?php include 'templates/header.php';?>
 
 
     <section class="ContactTitleSection">
@@ -42,31 +25,22 @@
         </div>
         <section class="Contact2Part">
             <div class="Contact2PartL">
-                <form class="form" action="">
-                    <label for="inputName" class="ContactLTxt">
-                        Full name*
-                    </label>
-                    <div class="input-box">
-                        <input class="inputName" type="text" placeholder="Enter your full name ...  " required>
-                    </div>
-                    <label for="inputEmail" class="ContactLTxt">
-                        Email Adress*
-                    </label>
-                    <div class="input-box">
-                        <input class="inputEmail" type="email" placeholder="Enter your e-mail ..." required>
-                    </div>
-                    <label for="inputMsg" class="ContactLTxt">
-                        Message*
-                    </label>
-                    <div class="input-box">
-                        <textarea class="inputeMsg" type="text" placeholder="Type your message here ..." required></textarea>
-                    </div>
-                    <button class="btn">
-                        Send
-                    </button>
+                <form class="form" id="myForm" action="assets/form.php" method="GET">
+
+                    <label for="inputName" class="ContactLTxt"> Full name* </label>
+                    <input class="inputName input-box" name="inputName" type="text" placeholder="Enter your full name ...  " required>
+                        
+                    <label for="inputEmail" class="ContactLTxt"> Email Adress* </label>
+                    <input class="inputEmail input-box" name="inputEmail" type="email" placeholder="Enter your e-mail ..." required>
+
+                    <label for="inputMsg" class="ContactLTxt"> Message* </label>
+                    <textarea class="inputeMsg input-box" name="inputMsg" type="text" placeholder="Type your message here ..." required></textarea>
+
+                    <button class="btn" type="submit"> Send </button>
+                    <!-- <input class="btn" type="submit" name="submit"/> -->
                 </form>
-                
             </div>
+
             <div class="Contact2PartR">
                 <div class="ContactRTop">
                     <div class="ContactRInfo">
@@ -103,6 +77,7 @@
             </div>
         </section>
     </section>
+
     <footer class="footerContact">
         <div class="footerTop">
             <p class="footerTxt0">© copyright mdefranceschi</p>
