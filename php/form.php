@@ -40,4 +40,3 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     //Recharge la page .
     header("Location: /contact.php");
 
-?>

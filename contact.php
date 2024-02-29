@@ -8,9 +8,9 @@
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
     
-
+    <!-- Header -->
     <?php include 'templates/header.php';?>
-
+    <!-- / -->
 
     <section class="ContactTitleSection">
         <h1 class="ContactTitleSectionTitle">Contact</h1>
