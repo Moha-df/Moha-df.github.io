@@ -14,6 +14,12 @@
     <nav class="Contact">
         <a href="contact.php">Contact</a>
     </nav>
+    <div class="lg">
+        <a href="index.php?lang=fr">FR</a>
+    </div>
+    <div class="lg">
+        <a href="index.php?lang=en">EN</a>
+    </div>
     <div class="blackthem">
         <img class="Moon" id="Moon" src="img/darktem.png" alt="them" />
     </div>
