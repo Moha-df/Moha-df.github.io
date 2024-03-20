@@ -25,19 +25,22 @@
         </div>
         <section class="Contact2Part">
             <div class="Contact2PartL">
-                <form class="form" id="myForm" action="assets/form.php" method="GET">
+                <form class="form" id="myForm" action="php/form.php" method="POST" novalidate="novalidate">  <!---->
+
+                    <div class="errors">
+                        
+                    </div>
 
                     <label for="inputName" class="ContactLTxt"> Full name* </label>
-                    <input class="inputName input-box" name="inputName" type="text" placeholder="Enter your full name ...  " required>
+                    <input class="inputName input-box" id="inputName" name="inputName" type="text" placeholder="Enter your full name ...  " required>
                         
                     <label for="inputEmail" class="ContactLTxt"> Email Adress* </label>
-                    <input class="inputEmail input-box" name="inputEmail" type="email" placeholder="Enter your e-mail ..." required>
+                    <input class="inputEmail input-box" id="inputEmail" name="inputEmail" type="email" placeholder="Enter your e-mail ..." required>
 
                     <label for="inputMsg" class="ContactLTxt"> Message* </label>
-                    <textarea class="inputeMsg input-box" name="inputMsg" type="text" placeholder="Type your message here ..." required></textarea>
+                    <textarea class="inputeMsg input-box" id="inputMsg" name="inputMsg" type="text" placeholder="Type your message here ..." required></textarea>
 
-                    <button class="btn" type="submit"> Send </button>
-                    <!-- <input class="btn" type="submit" name="submit"/> -->
+                    <input class="btn" type="submit" value="Send"> 
                 </form>
             </div>
 

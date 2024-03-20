@@ -504,7 +504,7 @@ input, textarea{
     width: 100%;
 }   
 
-button{
+button, input[type="submit"]{
     all: unset;
     background-color: white;
     height: 50px;
@@ -514,7 +514,7 @@ button{
     margin: 0 40%;
 }
 
-button:hover{
+button:hover, input[type="submit"]:hover{
     transition: all ease 1s;
     background-color: rgb(236, 236, 236);
 }
@@ -576,4 +576,9 @@ button:hover{
     border-top: 1px solid #dbdbdb;
     display: flex;
     flex-direction: column;
+}
+
+
+.errors{
+    color: red;
 }

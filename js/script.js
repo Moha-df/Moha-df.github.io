@@ -102,3 +102,59 @@ function scrollToMiddle(sectionId) {
         behavior: 'smooth'
     });
 }
+
+
+
+var form = document.getElementById("myForm")
+
+
+form.addEventListener("submit", checkForm, false)
+
+
+/**
+ * Permet de valider le formulaire pour laisser un commentaire sur le site.
+ */
+function checkForm(event) {
+
+    console.log("log")
+    // Stockage des messages d'erreurs des champs :
+    var errors = []
+    
+    var email = document.getElementById("inputEmail")
+    var commentaire = document.getElementById("inputMsg")
+    var name = document.getElementById("inputName")
+
+    if (name.validity.valid === false) {
+        errors.push("Veuillez ecrire un nom.")
+    }
+    if (email.validity.valid === false) {
+        errors.push("L'adresse email saisie ne semble pas valide.")
+    }
+    if (commentaire.validity.valid === false) {
+        errors.push("Merci de ne pas m'envoyez de commentaire vide.")
+    }
+
+    var errorDiv = form.querySelector("div.errors")
+
+    if (errors.length > 0) {
+        // On empêche le navigateur de soumettre les données :
+        event.preventDefault()
+
+        // On affiche les messages d'erreurs à l'utilisateur :
+        errorDiv.style.display = 'block'
+        var html = '<ul>'
+        for (var i = 0; i < errors.length; i++) {
+            html += '<li>' + errors[i] + '</li>'
+        }
+        html += '</ul>'
+        errorDiv.innerHTML = html
+
+        return false
+    }
+    else {
+        // Si pas d'erreur, on retire les messages d'erreur de l'affichage.
+        errorDiv.style.display = 'none'
+    }
+
+    return true
+}
