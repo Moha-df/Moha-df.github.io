@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
     <?php include 'templates/head.php';?>
 </head>
@@ -92,10 +91,6 @@
             <p class="footerTxt">join my discord server</p>
         </div>
     </footer>
-    
-    
-
-
-    
 
 </body>
+</html>

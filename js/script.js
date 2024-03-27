@@ -90,7 +90,7 @@ hiddenElements.forEach((el) => observer.observe(el));
 //                         Smooth Scroll
 
 function scrollToMiddle(sectionId, currentPage) {
-    if (currentPage === 'contact.php') {
+    if (currentPage === 'contact.php' || currentPage === 'project.php') {
         window.location.href = './index.php#' + sectionId;
     }
     var section = document.getElementById(sectionId);
@@ -105,6 +105,10 @@ function scrollToMiddle(sectionId, currentPage) {
     });
 }
 
+
+
+
+//                       Formulaire
 
 
 var form = document.getElementById("myForm")

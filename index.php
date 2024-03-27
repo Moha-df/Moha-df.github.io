@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<?php include 'traduction/traduction.php' ; ?>
-
-
+<html>
 <head>
     <?php include 'templates/head.php';?>
 </head>

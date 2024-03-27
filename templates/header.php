@@ -1,15 +1,21 @@
+<?php 
+    include 'traduction/traduction.php' ; 
+    $currentPage = basename($_SERVER['PHP_SELF']); // Obtient le nom de la page actuelle
+?>
+
+
 <header class="header">
     <nav class="MonNom">
     <a href="index.php">De Franceschi Mohamed</a>
     </nav>
-    <nav class="About" onclick="scrollToMiddle('about-section')">
-        About
+    <nav class="About" onclick="scrollToMiddle('about-section', '<?php echo $currentPage; ?>')">
+        <?php echo $About_text; ?>
     </nav>
-    <nav class="Experience" onclick="scrollToMiddle('experience-section')">
-        Experience 
+    <nav class="Experience" onclick="scrollToMiddle('experience-section', '<?php echo $currentPage; ?>')">
+        <?php echo $Experience_text; ?> 
     </nav>
     <nav class="project">
-        Project
+    <a href="project.php"><?php echo $Project_text; ?></a>
     </nav>
     <nav class="Contact">
         <a href="contact.php">Contact</a>
