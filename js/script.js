@@ -89,15 +89,17 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 //                         Smooth Scroll
 
-function scrollToMiddle(sectionId) {
-    
+function scrollToMiddle(sectionId, currentPage) {
+    if (currentPage === 'contact.php') {
+        window.location.href = './index.php#' + sectionId;
+    }
     var section = document.getElementById(sectionId);
     var sectionTop = section.offsetTop;
     var sectionHeight = section.clientHeight;
     var windowHeight = window.innerHeight;
     var middleOfSection = sectionTop + (sectionHeight / 2) - (windowHeight / 2);
 
-    window.scrollTo({
+    window.scrollTo({   
         top: middleOfSection,
         behavior: 'smooth'
     });

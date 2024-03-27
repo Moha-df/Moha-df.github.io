@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+<?php include 'traduction/traduction.php' ; ?>
+
+
 <head>
     <?php include 'templates/head.php';?>
 </head>
@@ -20,21 +24,21 @@
         <div class="rpp">
             <div class="txtrpp">
                 <p class="hi">
-                    Hi i'm
+                    <?php echo $HiIm_text; ?>
                 </p>
                 <h1 class="monblaz">
                     Mohamed De Franceschi
                 </h1>
                 <h2 class="student">
-                    Student in math-info
+                    <?php echo $Student_text; ?>
                 </h2>
             </div>
             <div class="buttonrpp">
                 <div class="cv">
-                    Download CV
+                    <?php echo $CV_text; ?>
                 </div>
                 <div class="contactInfo">
-                    Contact info
+                    <?php echo $cInfo_text; ?>
                 </div>
             </div>
             <div class="svgrpp">
@@ -49,8 +53,8 @@
     </section>
 
     <section class="AboutSection hidden" id="about-section">
-        <p class="AboutSectionTxt1">get to know more</p>
-        <h2 class="AboutSectionTxt2">about me</h2>
+        <p class="AboutSectionTxt1"><?php echo $Get2_text; ?></p>
+        <h2 class="AboutSectionTxt2"><?php echo $AboutMe_text; ?></h2>
     </section>
 
     <section class="ExperienceSection" id="experience-section">
@@ -62,8 +66,8 @@
                 <div class="ExperienceEncadrer ExperienceEncadrer1 hidden">
                     <img class="ExperienceEncadrerImg ExperienceTxt" src="img/medal.svg" alt="medal" title="medal" />
                     <h3 class="ExperienceEncadrerTitle ExperienceTxt">Experience</h3>
-                    <p class="ExperienceEncadrerTxt ExperienceTxt">2nd years at school</p>
-                    <p class="ExperienceEncadrerTxt2 ExperienceTxt">lot of dev practice</p>
+                    <p class="ExperienceEncadrerTxt ExperienceTxt"><?php echo $scnd_text; ?></p>
+                    <p class="ExperienceEncadrerTxt2 ExperienceTxt"><?php echo $Lotof_text; ?></p>
                 </div>
                 <div class="ExperienceEncadrer ExperienceEncadrer2 hidden">
                     <img class="ExperienceEncadrerImg ExperienceTxt" src="img/smiley.svg" alt="smiley" title="smiley" />
