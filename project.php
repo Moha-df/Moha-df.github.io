@@ -44,7 +44,7 @@
     </section>
 
     <!-- https://www.youtube.com/watch?v=6QE8dXq9SOE -->
-    <!-- Pour l'appel ajax prendre exemple de :  -->
+    <!-- Pour l'appel ajax prendre exemple de : https://git.unistra.fr/fbonjour-progweb2/projet-zombie-l2s4ptd2/-/blob/main/assets/js/search_form.js?ref_type=heads -->
 
     <!-- Footer -->
     <?php include 'templates/footer.php';?>
