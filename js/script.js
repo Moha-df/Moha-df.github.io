@@ -3,7 +3,8 @@
 const cursorDot = document.querySelector("[data-cursor-dot]");
 const cursorOutline = document.querySelector("[data-cursor-outline]");
 
-
+var dot = document.querySelector('.cursor-dot');
+var dot2 = document.querySelector('.cursor-outline');
 
 window.addEventListener("mousemove", function(e){
     
@@ -123,64 +124,43 @@ function scrollToMiddle(sectionId, currentPage) {
 }
 
 
-//                       Project Scroll
 
-const carousel = document.querySelector(".carousel");
-var dot = document.querySelector('.cursor-dot');
-var dot2 = document.querySelector('.cursor-outline');
-const arrowBtns = document.querySelectorAll(".wrapper i");
-const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-const carouselChildrens = [...carousel.children];
+//                    Requete Ajax qui affiche les projets
 
-let isDragging = false, startX, startScrollLeft;
+document.getElementById('btnGetData').addEventListener('click', function() {
 
-let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-
-carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-});
-carouselChildrens.slice(0, cardPerView).reverse().forEach(card => {
-    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-});
-
-arrowBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+    fetch('../php/projectBddToJson.php')
+        .then(function(response) {
+        if (!response.ok) {
+            throw new Error('Erreur');
+        }
+        return response.json();
     })
+        .then(function(data) {
+        var html = '';
+        data.forEach(function(item) {
+            html += '<li class="card">';
+            html += '<div class="img"><img src="' + item.image + '" alt="' + item.nom + '" draggable="false"></div>';
+            html += '<h2>' + item.nom + '</h2>';
+            html += '<span>' + item.langage + '</span>';
+            html += '</li>';
+        });
+
+        document.querySelector('.carousel').innerHTML = html;
+
+        const pscroll = document.querySelector(".pScrollHidden");
+        pscroll.classList.remove("pScrollHidden");
+
+        var btnGetData = document.getElementById('btnGetData');
+        btnGetData.parentNode.removeChild(btnGetData);
+
+        activateCarouselScroll();
+        })
+    .catch(function(error) {
+    console.error('Erreur:', error);
+    });
 });
 
-const dragStart = (e) => {
-    isDragging = true;
-    carousel.classList.add("dragging");
-    startX = e.pageX;
-    startScrollLeft = carousel.scrollLeft;
-}
-const dragStop = () => {
-    isDragging = false;
-    carousel.classList.remove("dragging");
-}
-
-const dragging = (e) => {
-    if(!isDragging) return
-    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-}
-
-const infiniteScroll = () => {
-    if(carousel.scrollLeft === 0){
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-        carousel.classList.remove("no-transition");
-    }else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.offsetWidth;
-        carousel.classList.remove("no-transition");
-    }
-}
-
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("scroll", infiniteScroll);
 
 
 
@@ -190,8 +170,6 @@ carousel.addEventListener("scroll", infiniteScroll);
 
 
 var form = document.getElementById("myForm")
-
-
 form.addEventListener("submit", checkForm, false)
 
 
@@ -248,3 +226,61 @@ function checkForm(event) {
 
 
 
+//                       Project Scroll
+function activateCarouselScroll() {
+    const carousel = document.querySelector(".carousel");
+    const arrowBtns = document.querySelectorAll(".wrapper i");
+    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+    const carouselChildrens = [...carousel.children];
+
+    let isDragging = false, startX, startScrollLeft;
+
+    let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+    carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+        carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
+    carouselChildrens.slice(0, cardPerView).reverse().forEach(card => {
+        carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+    });
+
+    arrowBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+        })
+    });
+
+    const dragStart = (e) => {
+        isDragging = true;
+        carousel.classList.add("dragging");
+        startX = e.pageX;
+        startScrollLeft = carousel.scrollLeft;
+    }
+    const dragStop = () => {
+        isDragging = false;
+        carousel.classList.remove("dragging");
+    }
+
+    const dragging = (e) => {
+        if(!isDragging) return
+        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+    }
+
+    const infiniteScroll = () => {
+        if(carousel.scrollLeft === 0){
+            carousel.classList.add("no-transition");
+            carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+            carousel.classList.remove("no-transition");
+        }else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+            carousel.classList.add("no-transition");
+            carousel.scrollLeft = carousel.offsetWidth;
+            carousel.classList.remove("no-transition");
+        }
+    }
+
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("scroll", infiniteScroll);
+
+}
