@@ -150,9 +150,12 @@ document.getElementById('btnGetData').addEventListener('click', function() {
 
         const pscroll = document.querySelector(".pScrollHidden");
         pscroll.classList.remove("pScrollHidden");
+        pscroll.classList.add("fade");
 
         var btnGetData = document.getElementById('btnGetData');
         btnGetData.parentNode.removeChild(btnGetData);
+
+        
 
         activateCarouselScroll();
         })
@@ -170,7 +173,7 @@ document.getElementById('btnGetData').addEventListener('click', function() {
 
 
 var form = document.getElementById("myForm")
-form.addEventListener("submit", checkForm, false)
+form.addEventListener("submit", checkForm)
 
 
 /**

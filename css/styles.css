@@ -83,17 +83,39 @@ a {
 
 /*                                          Header section                                          */
 
+
+
 .header {
     height: 5vh;
+    margin: 0 5%;
     padding: 50px;
     padding-right: 0;
     display: flex;
     justify-content: space-between;
     font-size: xx-large;
     max-width: 90vw;
-    margin-left: 5%;
-    margin-right: 5%;
     animation: slideInHeader 2s ease forwards;
+    margin-bottom: 0;
+}
+.headerL{
+    display: flex;
+}
+@media screen and (max-width: 1500px) {
+    .header {
+        font-size: x-large;
+    }
+
+    .blackthem{
+        height: 80%;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .header {
+        font-size: large;
+    }
+    .blackthem{
+        height: 60%;
+    }
 }
 
 @keyframes slideInHeader {
@@ -107,11 +129,7 @@ a {
     }
 }
 
-.MonNom{
-    margin-right: 5vw;
-}
-
-nav, .lg {
+nav{
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease;
     border-radius: 5px;
@@ -119,10 +137,13 @@ nav, .lg {
     height: 1.2em;
 }
 
-nav:hover , .lg:hover{
+nav:hover{
     background-color: #f2f2f2;
     border-color: #ccc;
     color: #333;
+}
+.lg{
+    margin-left: 15px;
 }
 
 .blackthem{
@@ -140,6 +161,26 @@ nav:hover , .lg:hover{
 .Moon {
   padding-bottom: 5px;
 }
+
+@media screen and (max-width: 650px) {
+    .header{
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        height: 15vh;
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        min-width: 100%;
+    }
+    .blackthem{
+        height: 25%;
+    }
+    .MonNom{
+        font-size: x-large;
+    }
+}
+
 
 /*                                          PdpPage section                                          */
 
@@ -241,6 +282,8 @@ nav:hover , .lg:hover{
 
 .luffypp {
     padding: 8%;
+    height: 350px;
+    width: 350px;
     border-radius: 50%;
     object-fit: cover;
     animation: slideAndFade 2s ease forwards;
@@ -254,6 +297,25 @@ nav:hover , .lg:hover{
     100% {
         transform: translate(0);
         opacity: 1;
+    }
+}
+@keyframes Fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .pdpPage{
+        flex-direction: column;
+        align-items: center;
+    }
+    .pp{
+        opacity: 0;
+        height: 0;
     }
 }
 
@@ -347,6 +409,18 @@ nav:hover , .lg:hover{
     filter: invert(7%) sepia(1%) saturate(484%) hue-rotate(314deg) brightness(98%) contrast(78%);
 }
 
+
+@media screen and (max-width: 650px) {
+    .ExperienceSectionLeft{
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+    .ExperienceSectionRight{
+        width: 100%;
+    }
+}
+
 /*                                          Footer section                                     */
 
 .footer{
@@ -365,7 +439,7 @@ nav:hover , .lg:hover{
 .footerBottom{
     margin-left: 10vw;
     display: flex;
-    justify-content:space-evenly;
+    justify-content:space-between;
     margin-right: 10vw;
     margin-top: 5vh;
     margin-bottom: 15vh;
@@ -585,6 +659,21 @@ button:hover, input[type="submit"]:hover{
     color: red;
 }
 
+@media screen and (max-width: 1000px) {
+    .Contact2Part{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Contact2PartL{
+        width: 60%;
+    }
+    .Contact2PartR{
+        width: 80%;
+    }
+}
+
+/*                                          Project html page                       */
+
 .ProjectHere{
     display: flex;
     justify-content: center;
@@ -596,6 +685,7 @@ button:hover, input[type="submit"]:hover{
     text-align: center;
     font-size: xxx-large;
     font-style: italic;
+    animation: slideInFromLeft 2s ease
 }
 
 .projectButton{
@@ -609,14 +699,17 @@ button:hover, input[type="submit"]:hover{
     margin-top: 150px;
     border-radius: 30px;
     border: 2px solid rgb(128, 128, 128);
+    animation: slideInFromRight 2s ease
 }
 
 .projectButton:hover{
     background: linear-gradient(to left top, white, rgb(216, 216, 216));
 }
 
-
-
+.fade {
+    opacity: 1; 
+    transition: opacity 3s ease; 
+}
 .ProjectScroll{
     display: flex;
     align-items: center;
@@ -728,9 +821,14 @@ button:hover, input[type="submit"]:hover{
     font-size: 1.31rem;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1200px){
     .wrapper .carousel {
         grid-auto-columns: 100%
+    }
+    .wrapper{
+        max-width: 600px;
+        width: 100%;
+        position: relative;
     }
 }
 
@@ -742,5 +840,10 @@ button:hover, input[type="submit"]:hover{
         max-width: 300px;
         width: 100%;
         position: relative;
+    }
+}
+@media screen and (max-width: 750px) {
+    .projectButton{
+        font-size: large;
     }
 }

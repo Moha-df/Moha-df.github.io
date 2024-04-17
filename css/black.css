@@ -137,3 +137,19 @@ nav:hover {
     opacity: 50%;
     filter: invert(100%) sepia(4%) saturate(0%) hue-rotate(263deg) brightness(104%) contrast(104%);
 }
+
+/*                                          project html page                                     */
+
+.ProjectTxt{
+    color: rgb(190, 190, 190);
+}
+.ProjectButton{
+    background: linear-gradient(to right bottom, rgb(31, 31, 31), rgb(53, 53, 53));
+    color: white;
+}
+.projectButton:hover{
+    background: linear-gradient(to left top, rgb(36, 36, 36), rgb(92, 92, 92));
+}
+.carousel .card{
+    background: linear-gradient(to left top, rgb(71, 71, 71), rgb(90, 90, 90));
+}
