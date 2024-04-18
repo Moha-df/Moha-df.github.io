@@ -4,8 +4,8 @@
 </head>
 
 <body class="body">
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
+
+    <?php include 'templates/cursor.php';?>
     
     <!-- Header -->
     <?php include 'templates/header.php';?>
@@ -52,31 +52,31 @@
         </div>
     </section>
 
-    <section class="AboutSection hidden" id="about-section">
+    <section class="AboutSection hidden show" id="about-section">
         <p class="AboutSectionTxt1"><?php echo $Get2_text; ?></p>
         <h2 class="AboutSectionTxt2"><?php echo $AboutMe_text; ?></h2>
     </section>
 
     <section class="ExperienceSection" id="experience-section">
-        <div class="ExperienceSectionLeft hidden">
+        <div class="ExperienceSectionLeft hidden show">
             <img class="luffypp2" src="img/luffy.jpg" alt="photo de moi 2" title="pp2" />
         </div>
         <div class="ExperienceSectionRight">
             <div class="ExperienceSectionRTop">
-                <div class="ExperienceEncadrer ExperienceEncadrer1 hidden">
+                <div class="ExperienceEncadrer ExperienceEncadrer1 hidden show">
                     <img class="ExperienceEncadrerImg ExperienceTxt" src="img/medal.svg" alt="medal" title="medal" />
                     <h3 class="ExperienceEncadrerTitle ExperienceTxt">Experience</h3>
                     <p class="ExperienceEncadrerTxt ExperienceTxt"><?php echo $scnd_text; ?></p>
                     <p class="ExperienceEncadrerTxt2 ExperienceTxt"><?php echo $Lotof_text; ?></p>
                 </div>
-                <div class="ExperienceEncadrer ExperienceEncadrer2 hidden">
+                <div class="ExperienceEncadrer ExperienceEncadrer2 hidden show">
                     <img class="ExperienceEncadrerImg ExperienceTxt" src="img/smiley.svg" alt="smiley" title="smiley" />
                     <h3 class="ExperienceEncadrerTitle ExperienceTxt">Language</h3>
                     <p class="ExperienceEncadrerTxt ExperienceTxt">html css js</p>
                     <p class="ExperienceEncadrerTxt2 ExperienceTxt">python c java</p>
                 </div>
             </div>
-            <p class="ExperienceSectionRBottom hidden">
+            <p class="ExperienceSectionRBottom hidden show">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
             </p>
         </div>

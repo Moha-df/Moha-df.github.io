@@ -4,13 +4,6 @@
 html{
     width: 100%;
     max-width: 100%;
-    cursor: none;
-}
-
-
-
-input{
-    cursor: none;
 }
 
 .body {
@@ -27,7 +20,6 @@ input{
 a {
     text-decoration: none;
     color: inherit;
-    cursor: none;
 }
 
 /*                                          Scroll animation section                                          */
@@ -80,6 +72,10 @@ a {
     z-index: 1;
     pointer-events: none;
 }
+
+
+
+
 
 /*                                          Header section                                          */
 

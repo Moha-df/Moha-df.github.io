@@ -4,8 +4,7 @@
 </head>
 
 <body class="body">
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
+<?php include 'templates/cursor.php';?>
     
     <!-- Header -->
     <?php include 'templates/header.php';?>

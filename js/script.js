@@ -1,5 +1,18 @@
 //                         Curseur
 
+document.body.style.cursor = "none";
+
+var inputs = document.getElementsByTagName("input");
+for(var i = 0; i < inputs.length; i++) {
+    inputs[i].style.cursor = "none";
+}
+
+var links = document.getElementsByTagName("a");
+for(var i = 0; i < links.length; i++) {
+    links[i].style.cursor = "none";
+}
+
+
 const cursorDot = document.querySelector("[data-cursor-dot]");
 const cursorOutline = document.querySelector("[data-cursor-outline]");
 
@@ -173,7 +186,7 @@ document.getElementById('btnGetData').addEventListener('click', function() {
 
 
 var form = document.getElementById("myForm")
-form.addEventListener("submit", checkForm)
+form.addEventListener("submit", checkForm, false)
 
 
 /**
