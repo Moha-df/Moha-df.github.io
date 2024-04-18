@@ -1,0 +1,3 @@
+[build]
+  command = "composer install && php build.php" # Commande pour construire votre site PHP
+  publish = "public" # Dossier contenant les fichiers à publier
